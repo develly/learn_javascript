@@ -2,5 +2,5 @@
 
 console.log("Hello World");
 
-let a;
-a = 1;
+let a
+a = 6;
