@@ -67,13 +67,25 @@ let b = {name : 'elly'};
 // a와 b는 같지 않음 (a === b false)
 ```
 
-* 변수의 가변성
+* 변수의 가변성(가변함, mutable)
 ```
 let a = {name : 'elly'};
 let b = {name : 'elly'}; 
 let c = a;
 c.name = 'yuri';
 // a와 c 모두가 name이 yuri로 변경
+```
+
+```
+const a = { name: 'yuri', age: 20 };
+const b = { name: 'yuri', age: 20 };
+const c = a;
+console.log(a === b); // flase
+console.log(c === a); // true
+c.age = 30;
+// a 와 c 모두가 age가 30으로 변경
+// const로 선언했기 때문에 포인터 수정 불가(따라서 a에 다른 값을 할당할 수 없음)
+// 하지만 name과 age의 포인터는 수정 가능 (matable한 자료형으로 c 바꾸면 a도 바뀜)
 ```
 
 * object의 복사
@@ -84,6 +96,14 @@ c.name = 'yuri';
 ```
 const a = {name: 'elly', score: [50, 60, 100]};
 ```
+
+#### (3) const, let, mutable, immutable 정리
+* 기본적으로 const 사용
+* 만약 값을 변경할 예정이면 let을 사용
+* object의 경우 const를 사용해도 값 변경 가능 
+* 기존에 선언된 object를 다른 변수에 할당 할 때 주의하기
+* object의 경우 가변하기 때문에 할당한 값을 바꾸면 기존 값도 바뀜
+* 따라서 할당 할 때 python의 deep copy같은 방법이 필요함
 
 ## 3. scope
 #### (1) block scope
@@ -170,12 +190,9 @@ console.log(gsymbol1 === gsymbol2); // true, 값이 같으면 같은 것으로 �
 ```
 const elly = { name: 'yuri', age: 20 };
 ```
-1. const로 선언했기 때문에 포인터 수정 불가
-2. 따라서 elly에 다른 값을 할당할 수 없음
-3. 객체는 메모리에 값이 아니라 reference 형태로 올라감
-4. elly가 가르키는 곳에는 name과 age 가 가르키는 reference 가 담겨있음
-5. name과 age는 포인터가 잠겨있지 않기 때문에 수정 가능함
-6. ```elly.name = 'hi bro';``` 가능
+* 객체는 메모리에 값이 아니라 reference 가 올라감
+* elly가 가르키는 곳에는 name과 age의 reference 가 담겨있음
+   
 
 ## 5. Type script(TS)
 * JavaScript는 Dynamically Typed Language임 (C, Java는 Statically Typed Language)  
