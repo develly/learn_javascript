@@ -113,7 +113,7 @@ const a = {name: 'elly', score: [50, 60, 100]};
   console.log(name); // elly
 }
 
-console.log(name); // 아무것도 안나옴. 에러는 안남
+console.log(name); // 아무것도 안나옴. 에러는 안남(웹에서 window.name 을 제공하기 때문) node로 돌리면 에러남.
 console.log(typeof(name)); // string
 ```
 블록 안의 값은 블록 밖에서 접근 불가(볼 수 없음)
