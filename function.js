@@ -153,7 +153,7 @@ randomQuiz('wrong', printYes, printNo);
 randomQuiz('love you', printYes, printNo);
   
 // Arrow function
-// function 명령어 생략가능. anonymous function이면 이름도 생략 가능. ()만 남고 {}는 한줄이면 생략 가능함
+// function 명령어 생략가능. 항상 anonymous function이므로 이름도 생략 가능. ()만 남고 {}는 한줄이면 생략 가능함
 // const simplePrint = function () {
 //   console.log('simplePrint!');
 // };  

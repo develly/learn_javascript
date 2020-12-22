@@ -116,10 +116,3 @@ const fruit2 = { color: 'blue', size: 'big' };
 const mixed = Object.assign({}, fruit1, fruit2);
 console.log(mixed.color); // blue, 뒤에 것으로 덮어 씌여짐
 console.log(mixed.size); // big
-
-const test1 = { name: 'ellie', age: 4 };
-const test2 = Object.assign({}, test1);
-console.log(test1);
-console.log(test2);
-console.log(test1 == test2);
-console.log(test1 === test2);
