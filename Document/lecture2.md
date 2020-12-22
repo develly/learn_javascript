@@ -90,8 +90,15 @@ c.age = 30;
 
 * object의 복사
 ```
+// Object.assign({}, object 이름);
+const user = { name: 'ellie', age: 4 };
+const user2 = Object.assign({}, user); 
 
+console.log(user2); // { name: 'ellie', age: 4 }
+console.log(user == user2); // false
+console.log(user === user2); // false
 ```
+
 * Object안에 배열이 들어간 경우 복사
 ```
 const a = {name: 'elly', score: [50, 60, 100]};
