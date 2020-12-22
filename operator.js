@@ -1,3 +1,5 @@
+'use strict';
+
 // Numeric operators
 console.log(1 + 1); // add
 console.log(1 - 1); // substract
@@ -117,6 +119,35 @@ for (let i = 3; i > 1; i = i - 1) {
   console.log(`inline variable for: ${i}`);
 }
 console.log(i); // 0 
+
+// simple
+function printAll(...args) {
+    for (let i = 0; i < args.length; i++) {
+      console.log(args[i]);
+    }
+
+    // 배열의 경우 of를 통해 값을 받아올 수 있음
+    // 예시)
+    // const array = [1, 2, 4, 5];
+    // for (let value of array) {
+    // console.log(value);
+    // }
+
+    for (const arg of args) {
+      console.log(arg);
+    }
+    
+    args.forEach((arg) => console.log(arg));
+}
+printAll('dream', 'coding', 'ellie');
+
+
+// 오브젝트의 경우 key는 in 을 통해 받아올 수 있음
+console.clear();
+const ellie = { name: 'ellie', age: 4 };
+for (let key in ellie) {
+  console.log(key);
+}
 
 // nested loops
 for (let i = 0; i < 10; i++) {
